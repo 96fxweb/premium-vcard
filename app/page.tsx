@@ -33,7 +33,7 @@ const config = {
 // ==========================================
 // 2. VCARD GENERATOR UTILITY
 // ==========================================
-const generateAndDownloadVCard = (contactData) => {
+const generateAndDownloadVCard = (contactData: any) => {
   const { firstName, lastName, businessName, phone, email, address, website, title } = contactData;
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:${lastName};${firstName};;;\nFN:${firstName} ${lastName}\nORG:${businessName}\nTITLE:${title}\nTEL;TYPE=WORK,VOICE:${phone}\nEMAIL;TYPE=PREF,INTERNET:${email}\nADR;TYPE=WORK:;;${address.street};${address.city};${address.state};${address.zip};${address.country}\nURL:${website}\nEND:VCARD`;
 
@@ -69,11 +69,11 @@ export default function PremiumLinkBio() {
   };
 
   // --- Form Handling ---
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
 
